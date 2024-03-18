@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: HOTEL-SERVICE
+  datasource:
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/microservices?createDatabaseIfNotExist=true
+    password: root
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+server:
+  port: 8082
+
+okta:
+  oauth2:
+    issuer: https://dev-48568461.okta.com/oauth2/default
+    audience: api://default
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
